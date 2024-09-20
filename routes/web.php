@@ -1,13 +1,20 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
+//Routes for company
 
+Route::get('company',[CompanyController::class, 'index']);
+Route::get('company/{company:id}',[CompanyController::class, 'show']);
+Route::post('company',[CompanyController::class, 'store']);
+Route::post('company/{company:id}',[CompanyController::class, 'update']);
+Route::post('company/{company:id}', [CompanyController::class, 'destroy ']);
 
 
 Route::get('/dashboard', function () {
