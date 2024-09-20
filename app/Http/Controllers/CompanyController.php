@@ -10,7 +10,7 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::latest()->get();
-         var_dump($companies); 
+       
         return view('main', ['companies' => $companies]);
       
     }
@@ -23,6 +23,9 @@ class CompanyController extends Controller
             return redirect('main');
         } 
         return view ('show.showCompany', ['company' => $company]);
+    }
+    public function create(){
+        return view('create.createCompany');
     }
 
     public function store(Request $request)
@@ -38,7 +41,7 @@ class CompanyController extends Controller
 
         session()->flash('success', 'Company is created successfully');
 
-        return redirect("main");
+        return view('/create');
     }
 
     public function update(Request $request, $id)
