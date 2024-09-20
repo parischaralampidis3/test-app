@@ -15,7 +15,7 @@ class CompanyFactory extends Factory
         return [
             'name' => $this->faker->company,
             'address' => $this->faker->address,
-            'email' => $this->faker->email,
+            'email' => $this->faker->companyEmail,
             'website' => $this->faker->url,
             'user_id' => User::factory(), // This creates a new user
         ];
