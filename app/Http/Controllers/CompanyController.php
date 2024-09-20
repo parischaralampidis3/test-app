@@ -10,7 +10,9 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::latest()->get();
+         var_dump($companies); 
         return view('main', ['companies' => $companies]);
+      
     }
 
     public function show($id)
