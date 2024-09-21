@@ -1,56 +1,38 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
-</head>
-<body>
-<section>
-  <div class="w-full">
-    <table class="items-center bg-transparent w-full border-collapse sm:table-auto">
-      <thead >
-          <tr>
-            <th class="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" >
-              Name
-            </th>
-          </tr>
-            <tr>
-            <th class="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" >
-              Address
-            </th>
-          </tr>
-            <tr>
-            <th class="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" >
-              Email
-            </th>
-          </tr>
-            <tr>
-            <th class="px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" >
-              Website
-            </th>
-          </tr>
-      </thead>
-      <tbody>
-        @foreach ( $companies as $company  )
-            <tr>
-              <td>
-                {!! $company->name!!}
-              </td>
-                <td>
-                {!! $company->address!!}
-              </td>
-                <td>
-                {!! $company->email!!}
-              </td>
-                <td>
-                {!! $company->website!!}
-              </td>
-            </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </div>
+@extends('layout') <!-- Extends the layout.blade.php -->
+
+@section('content')
+<section class="flex justify-around mx-5 px-0 py-6"> <!-- Added margin-x and padding-x -->
+    <div class="mt-12 mx-auto overflow-x-auto">
+        <h1 class="text-xl font-bold">Company List</h1>
+        <br /><br />
+        <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+            <table class="min-w-full leading-normal">
+                <thead>
+                    <tr>
+                        <th class="p-2 border-b border-slate-200 bg-slate-50">Company Name</th>
+                        <th class="p-2 border-b border-slate-200 bg-slate-50">Address</th>
+                        <th class="p-2 border-b border-slate-200 bg-slate-50">Email</th>
+                        <th class="p-2 border-b border-slate-200 bg-slate-50">Website</th>
+                        <th class="p-2 border-b border-slate-200 bg-slate-50">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($companies as $company)
+                    <tr class="hover:bg-slate-50 border-b border-slate-200">
+                        <td class="p-4 py-5">{!! $company->name !!}</td>
+                        <td class="p-4 py-5">{!! $company->address !!}</td>
+                        <td class="p-4 py-5">{!! $company->email !!}</td>
+                        <td class="p-4 py-5">{!! $company->website !!}</td>
+                        <td class="p-4 py-5 flex">
+                            <a href="" class="update bg-blue-500 text-white font-bold py-2 px-2 rounded">Update</a>
+                            <a class='ml-4 bg-blue-500 text-white font-bold py-2 px-2 hover:underline' href="{{route('company.show', $company->id)  }}">Show</a>
+                            <a href="#" class="ml-4 bg-red-500 text-white font-bold py-2 px-2 hover:underline">Delete</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 </section>
-</body>
-</html>
+@endsection

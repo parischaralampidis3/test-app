@@ -11,7 +11,7 @@ Route::get('/', function () {
 //Routes for company
 Route::get('/', [CompanyController::class, 'index']);
 
-Route::get('company/{company:id}', [CompanyController::class, 'show']);
+Route::get('company/{company:id}', [CompanyController::class, 'show'])->name('company.show');
 
 Route::get('create', [CompanyController::class, 'create']);
 Route::post('create', [CompanyController::class, 'store']);

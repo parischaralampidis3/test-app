@@ -8,4 +8,8 @@ class Company extends Model
     use HasFactory;
     protected $table = 'company'; // Explicitly set the correct table name
     protected $fillable = ['name', 'address', 'email', 'website'];
+
+    public function user(){
+        $this-> belongsTo(User::class);
+    }
 }
