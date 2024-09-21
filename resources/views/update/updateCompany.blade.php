@@ -15,11 +15,13 @@
 </head>
 <body>
     <div>
-<form method="POST" action="{{ url('edit') }}">
+<form method="POST" action="{{ route('company.update', $company->id) }}">
     @csrf
+    @method('PUT')
+
     <div>
-        <label>Name</label>
-        <input type="text" name="name" id="name" value="{{ old('name') }}" required>
+        <label>Company Name:</label>
+        <input type="text" name="name" id="name" value="{{ old('name', $company->name) }}">
         @error('name')
             <p>{{ $message }}</p>
         @enderror
@@ -27,7 +29,7 @@
 
     <div>
         <label>Address</label>
-        <input type="text" name="address" id="address" value="{{ old('address') }}" required>
+        <input type="text" name="address" id="address" value="{{ old('address', $company->address) }}">
         @error('address')
             <p>{{ $message }}</p>
         @enderror
@@ -35,7 +37,7 @@
 
     <div>
         <label>Email</label>
-        <input type="text" name="email" id="email" value="{{ old('email') }}" required>
+        <input type="text" name="email" id="email" value="{{ old('email', $company->email) }}">
         @error('email')
             <p>{{ $message }}</p>
         @enderror
@@ -43,7 +45,7 @@
 
     <div>
         <label>Website</label>
-        <input type="text" name="website" id="website" value="{{ old('website') }}" required>
+        <input type="text" name="website" id="website" value="{{ old('website', $company->website) }}">
         @error('website')
             <p>{{ $message }}</p>
         @enderror

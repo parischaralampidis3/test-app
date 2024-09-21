@@ -45,30 +45,38 @@ class CompanyController extends Controller
     return redirect()->back();
 }
 
-    public function edit(){
-        return view('update.updateCompany');
-    }
+public function edit($id)
+{
+    $company = Company::find($id);
 
-    public function update(Request $request, $id)
-    {
-        $company = Company::find($id);
-        if (!$company) {
-            session()->flash('fail', "Company can't be updated");
-            return redirect("main");
-        }
-        $request->validate(
-            [
-                'name' => 'required|max:255',
-                'address' => 'required|max:255',
-                'email' => 'required|max:255|unique:company,email' . $company -> id,
-                'website' => 'required|url|max:255'
-            ]
-        );
-        $company->update($request->only(['name','address','email','website']));
-        session()->flash('success', 'Company is created successfully');
+    if (!$company) {
+        session()->flash('fail', "Company not found.");
         return redirect("main");
     }
 
+    return view('update.updateCompany', compact('company'));
+}
+public function update(Request $request, $id)
+{
+    $company = Company::find($id);
+    
+    if (!$company) {
+        session()->flash('fail', "Company can't be updated");
+        return redirect("main");
+    }
+
+    $request->validate([
+        'name' => 'required|max:255',
+        'address' => 'required|max:255',
+        'email' => 'required|max:255|unique:company,email,' . $company->id,
+        'website' => 'required|url|max:255'
+    ]);
+
+    $company->update($request->all());
+    session()->flash('success', 'Company updated successfully');
+    
+    return redirect()->back();
+}
     public function destroy($id)
     {
         $company = Company::find($id);

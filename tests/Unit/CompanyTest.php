@@ -76,7 +76,7 @@ class CompanyTest extends TestCase
             'id' => 1
         ];
 
-            $companyData->update($updatedCompanyData);
+        $companyData->update($updatedCompanyData);
     
         $this->assertDatabaseHas('company', [
             'name' => 'Test Company Name 1',

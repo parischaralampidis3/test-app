@@ -16,8 +16,10 @@ Route::get('company/{company:id}', [CompanyController::class, 'show']);
 Route::get('create', [CompanyController::class, 'create']);
 Route::post('create', [CompanyController::class, 'store']);
 
-Route::get('edit',[CompanyController::class, 'edit']);
-Route::post('edit', [CompanyController::class, 'update']);
+Route::get('edit/{company:id}', [CompanyController::class, 'edit'])->name('company.edit');
+Route::put('edit/{company:id}', [CompanyController::class, 'update'])->name('company.update');
+
+
 
 Route::delete('company/{company:id}', [CompanyController::class, 'destroy']);
 
