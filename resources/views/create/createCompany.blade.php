@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Company</title>
-</head>
-<body>
-    <div>
+@extends('layout') <!-- Extends the main layout -->
+
+@section('content')
+    <section class="flex justify-around mx-5 px-0 py-6"> 
         <form method="POST" action="{{ url('create') }}">
+
             @csrf
+
+                <div class="flex justify-around items-center">
+    <h1 class="font-bold mt-10 mx-6 text-2xl mx-auto">Create a Company record</h1>
+    
+    <a class="mt-10 ml-4 bg-green-600 text-white font-bold py-2 px-2 hover:underline" href="/">Go at the main page</a>
+    </div>
             <div>
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" value="{{ old('name') }}" required>
@@ -43,6 +45,5 @@
 
             <button type="submit">Submit</button>
         </form>
-    </div>
-</body>
-</html>
+    </section>
+@endsection

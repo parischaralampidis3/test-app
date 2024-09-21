@@ -10,20 +10,24 @@
     <div class="p-4">
     <div class="flex flex-col lg:flex-row justify-around">
     <div class="mt-4">
+      
         <h1 class="font-bold text-blue-400">Company Name:</h1>
         <p>{{$company->name}}</p>
     </div>
     <div class="mt-4">
+        
         <h1 class="font-bold text-blue-400">Company Email:</h1>
         <p>{{$company->email}}</p>
     </div>
     
  
     <div class="mt-4">
+      
         <h1 class="font-bold text-blue-400">Company Address</h1>
         <p>{{$company->address}}</p>
     </div>
     <div class="mt-4">
+     
         <h1 class="font-bold text-blue-400">Company Website</h1>
         <p>{{$company->website}}</p>
 
