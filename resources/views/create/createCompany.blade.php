@@ -1,6 +1,6 @@
-@extends('layout') <!-- Extends the main layout -->
+<x-app-layout> 
 
-@section('content')
+
     <section class="container mx-auto">             
         <div class="flex justify-around items-center">
             <h1 class="font-bold text-center mt-10 text-2xl ml-0">Create a Company record</h1>
@@ -48,4 +48,5 @@
         </form>
         </div>
     </section>
-@endsection
+
+</x-app-layout>

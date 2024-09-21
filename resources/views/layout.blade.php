@@ -8,18 +8,26 @@
     @vite('resources/css/app.css') <!-- Link to Tailwind or other CSS -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
         <!-- Navbar -->
         <nav class="md:flex md:justify-between md:items-center">
-            <div>
+            <div class="ml-10">
                 <a href="/">
-                    <img src="/images/logo.svg" alt="Logo" width="165" height="16">
+                    <i class="text-3xl fa-solid fa-building"></i>
                 </a>
+                </div>
+                <div>
+                    <a href="">Show Company</a>
+                </div>
+                  <div>
+                    <a href="">Create Company</a>
+                </div>
+              
             </div>
 
             <div class="mt-8 md:mt-0 flex items-center mx-10">

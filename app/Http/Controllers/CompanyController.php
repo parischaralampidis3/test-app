@@ -7,13 +7,12 @@ use App\Models\Company;
 
 class CompanyController extends Controller
 {
-    public function index()
-    {
-        $companies = Company::latest()->get();
-       
-        return view('main', ['companies' => $companies]);
-      
-    }
+public function index()
+{
+    $companies = Company::latest()->get(); // Fetch companies
+
+    return view('dashboard', ['companies' => $companies]); // Pass them to the view
+}
 
     public function show($id)
     {
@@ -51,7 +50,7 @@ public function edit($id)
 
     if (!$company) {
         session()->flash('fail', "Company not found.");
-        return redirect("main");
+        return redirect("dashboard");
     }
 
     return view('update.updateCompany', compact('company'));
@@ -62,7 +61,7 @@ public function update(Request $request, $id)
     
     if (!$company) {
         session()->flash('fail', "Company can't be updated");
-        return redirect("main");
+        return redirect("dashboard");
     }
 
     $request->validate([
@@ -81,5 +80,7 @@ public function update(Request $request, $id)
     {
         $company = Company::find($id);
         $company->delete();
+        return redirect("dashboard");
     }
+    
 }
