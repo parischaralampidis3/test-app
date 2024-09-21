@@ -22,7 +22,7 @@
                 </a>
             </div>
 
-            <div class="mt-8 md:mt-0 flex items-center mx-6">
+            <div class="mt-8 md:mt-0 flex items-center mx-10">
                 @auth
                 <span class="text-xs font-bold uppercase">Welcome Back, {{ auth()->user()->name }}</span>
                 @if (auth()->user()->username === 'admin')
@@ -32,16 +32,11 @@
                 <!-- Logout functionality -->
                 <form method="POST" action="/logout" class="ml-4">
                     @csrf
-                    <button type="submit" class="font-semibold">Log Out</button>
+                    <button class="font-bold text-lg text-red-700" type="submit" class="font-semibold">Log Out</button>
                 </form>
                 @else
                 <a href="/register" class="text-xs font-bold uppercase">Register</a>
                 @endauth
-
-                <a href="#newsletter"
-                    class="bg-blue-500 ml-4 rounded-full text-xs font-semibold text-white uppercase py-2 px-5">
-                    Subscribe for Updates
-                </a>
             </div>
         </nav>
 
