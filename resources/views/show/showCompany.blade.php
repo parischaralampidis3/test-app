@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+   {{$company->name}}
+   {{$company->email}}
+   {{$company->address}}
+   {{$company->website}}
 </body>
 </html>
