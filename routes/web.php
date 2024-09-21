@@ -10,16 +10,21 @@ Route::get('/', function () {
 
 //Routes for company
 Route::get('/', [CompanyController::class, 'index']);
+
 Route::get('company/{company:id}', [CompanyController::class, 'show']);
+
 Route::get('create', [CompanyController::class, 'create']);
 Route::post('create', [CompanyController::class, 'store']);
-Route::post('company/{company:id}', [CompanyController::class, 'update']);
-Route::delete('company/{company:id}', [CompanyController::class, 'destroy']);
 
+Route::get('edit',[CompanyController::class, 'edit']);
+Route::post('edit', [CompanyController::class, 'update']);
+
+Route::delete('company/{company:id}', [CompanyController::class, 'destroy']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

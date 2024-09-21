@@ -20,7 +20,7 @@ class CompanyTest extends TestCase
   
         $company = Company::factory()->create();
 
-        $this->assertDatabaseHas('companies',[
+        $this->assertDatabaseHas('company',[
             'id' => $company -> id,
             'name' => $company -> name,
             'address' => $company -> address,
@@ -45,7 +45,7 @@ class CompanyTest extends TestCase
         
         $company = Company::factory()->create();
 
-        $this->assertDatabaseHas('companies',[
+        $this->assertDatabaseHas('company',[
             'id' => $company -> id,
             'name' => $company -> name,
             'address' => $company -> address,

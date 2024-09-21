@@ -19,7 +19,7 @@ class CompanySeeder extends Seeder
         $userIds = User::pluck('id')->toArray(); // Ensure you have users in the database
 
         foreach (range(1, 10) as $index) { // Adjust the range for the number of companies to insert
-            DB::table('companies')->insert([
+            DB::table('company')->insert([
                 'name' => $faker->company,
                 'email' => $faker->unique()->companyEmail,
                 'address' => $faker->address,
