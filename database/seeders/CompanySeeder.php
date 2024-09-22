@@ -15,16 +15,16 @@ class CompanySeeder extends Seeder
     {
         $faker = Faker::create();
 
-        // Get all user IDs from the users table
-        $userIds = User::pluck('id')->toArray(); // Ensure you have users in the database
+  
+        $userIds = User::pluck('id')->toArray(); 
 
-        foreach (range(1, 10) as $index) { // Adjust the range for the number of companies to insert
+        foreach (range(1, 10) as $index) {
             DB::table('company')->insert([
                 'name' => $faker->company,
                 'email' => $faker->unique()->companyEmail,
                 'address' => $faker->address,
                 'website' => $faker->url,
-                'user_id' => $faker->randomElement($userIds), // Use the array of user IDs
+                'user_id' => $faker->randomElement($userIds), 
             ]);
         }
     }

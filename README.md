@@ -51,7 +51,6 @@ git clone https://github.com/parischaralampidis3/test-app.git
 
 This will clone the project at your local computer.
 
-
 4. install composer dependencies:
 
 run: composer install
@@ -77,7 +76,7 @@ run npm install
 
 10. Run to generate a key for .env:
 
-php artisan generate:key
+php artisan key:generate
 
 11. Run:
 

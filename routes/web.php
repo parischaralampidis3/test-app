@@ -4,8 +4,6 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-
-
 //Routes for company
 
 Route::get('/dashboard', function () {
@@ -22,7 +20,7 @@ Route::put('edit/{company:id}', [CompanyController::class, 'update'])->name('com
 
 
 //initiate a route for archiving soft deleted results
-Route::get('archive',[CompanyController::class, 'archive'])->middleware('auth')->name('company.archive');
+Route::get('archive', [CompanyController::class, 'archive'])->middleware('auth')->name('company.archive');
 
 //Initiate a route for hard deleted results.
 Route::delete('company/{company:id}', [CompanyController::class, 'destroy'])->name('company.destroy');
@@ -30,11 +28,8 @@ Route::delete('company/{company:id}', [CompanyController::class, 'destroy'])->na
 Route::post('company/{company:id}/restore', [CompanyController::class, 'restore'])->name('company.restore');
 
 
-
-
-
-Route::get('/', function(){
- return view('auth.register');
+Route::get('/', function () {
+    return view('auth.register');
 });
 
 Route::middleware('auth')->group(function () {
@@ -44,4 +39,4 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/dashboard', [CompanyController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
