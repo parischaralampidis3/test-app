@@ -1,7 +1,6 @@
 ## Concept
 
-The CompanyListApp enable a user to create company records, show, update and delete the company records. Also a user can archive deleted company records and
-also restore them again at the dashboard.
+The CompanyListApp enables a user to create company records, and also to show, update and delete the company records. Also a user can archive deleted company records and restore them again at the dashboard.
 
 ## CompanyListApp structure
 
@@ -10,16 +9,16 @@ This web application, has created under a CRUD(Create-Read-Edit-Delete) philosop
 At the main app dashboard, a user can create a company through access specific create action button and preview his companies records at a dashboard table.
 Every table record is accompanied with Show/Update/Delete button.
 
-A Create button, where is located at the main dashboard, enables the user to redirect at a single view, and from there to  fill form fields in order to create a new company record.
+A button for creating company record, is located at the main dashboard and enables the user to redirect at a single view, and from there to  fill form fields in order to submit and create a new company record.
 
-Also an Archive record results button is created at the main dashboard, with a single view and if a user clicks 'Archiver Record Results' button, he can access deleted records that has been archived through deletion at the main dashboard. Also he can restore deleted records at the main dashboard.
+Also an 'Archive record results' button is created at the main dashboard, with a single view and if a user clicks the button, he can access deleted records that has been archived through deletion at the main dashboard. Also he can restore deleted records at the main dashboard.
 
-Evere record that will be created from a specific User, will enable a relationship. So this way the user can access his records privately. From a security scope no one other user can preview records that he is not allowed to access.
+Every record that will be created from a specific User, also will enable a relationship between Company and User. So this way the user can access his records privately. And from a security scope no one other user can preview records that he is not allowed to access.
 
 
 ## Assumptions
 
-Through the time I have deticated to execute the app project. I fonud myself enjoying the work and I was happy to meet new challenges and to strive through them. 
+Through the time I have dedicated to execute the app project. I fonud myself enjoying the work and I was happy to meet new challenges and to strive through them. 
 Let me breakdown my process:
 1. I attempted to set a new structure and initiate all the libraries (and every tool I was going to use through the project.)
 2. I initiated a git structure to make the project commits/push at the Git repository platform.
@@ -32,11 +31,11 @@ I have implemented the migrations at the Database, and set the database columns.
 8. At this point and after I had a basic functional structure, I have started to care more about the styling.
 9. I made a decision transition moving my main dashboard from a third view file, at the Laravel Breeze Dashboard file. So this kept me a little behind the process. 
 9. As I was keeping to work at the project, I was interested establishing  relationships between the User and Company models, in order to create the functionality for private dashboard.
-10. I tried the challenge for soft deletes, as it was a concept, I didn't reach out ever before. It was too interesting and let me equip with another technique,
-that it might be usefull at the future.
+10. I tried the challenge for soft deletes, as it was a concept, I didn't reach out ever before. It was too interesting and let me equip with another technique,that it might be usefull at the future.
 
 Finally I let myself free to user pen and paper for figuring out the next steps, and I was trying to search for information in every way, in order to execute the project.
-I dedicated 48 hours almost, but unfortunately I didn't go for the (optional) filter challenge, cause I my time was ended, and i prefered to be consistent at the deadline.
+
+I dedicated 48 hours almost, but unfortunately I didn't go for the (optional) filter challenge, cause my time was ending, and i prefered to be consistent at the deadline.
 
 
 ## In order to run the project
