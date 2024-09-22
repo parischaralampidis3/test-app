@@ -24,6 +24,7 @@
         </div>
         </div>
         <br /><br />
+
         <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
             <table class="min-w-full leading-normal">
                 <thead>

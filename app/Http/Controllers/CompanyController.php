@@ -87,6 +87,7 @@ class CompanyController extends Controller
         return redirect()->back();
     }
     
+
     public function archive(){
           $company = Company::onlyTrashed()
         ->where('user_id', auth()->id())
