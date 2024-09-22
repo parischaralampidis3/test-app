@@ -77,16 +77,13 @@ class CompanyTest extends TestCase
         ];
 
         $companyData->update($updatedCompanyData);
-    
+
         $this->assertDatabaseHas('company', [
             'name' => 'Test Company Name 1',
             'email' => 'test2@example.com',
             'address' => '124 address street',
             'website' => 'http://www.example1.com',
-            'id' => $companyData->id  // Ensure we're checking the correct company
+            'id' => $companyData->id
         ]);
     }
-
-
-
 }
