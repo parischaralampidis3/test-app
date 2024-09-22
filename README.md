@@ -1,66 +1,67 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Concept
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The CompanyListApp enable a user to create company records, show, update and delete the company records. Also a user can archive deleted company records and
+also restore them again at the dashboard.
 
-## About Laravel
+## CompanyListApp structure
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This web application, has created under a CRUD(Create-Read-Edit-Delete) philosophy.More specifically, a user is able to execute authorization actions, such as login/register/logout, and also he is allowed to access a profile dashboard.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+At the main app dashboard, a user can create a company through access specific create action button and preview his companies records at a dashboard table.
+Every table record is accompanied with Show/Update/Delete button.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+A Create button, where is located at the main dashboard, enables the user to redirect at a single view, and from there to  fill form fields in order to create a new company record.
 
-## Learning Laravel
+Also an Archive record results button is created at the main dashboard, with a single view and if a user clicks 'Archiver Record Results' button, he can access deleted records that has been archived through deletion at the main dashboard. Also he can restore deleted records at the main dashboard.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Evere record that will be created from a specific User, will enable a relationship. So this way the user can access his records privately. From a security scope no one other user can preview records that he is not allowed to access.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Assumptions
 
-## Laravel Sponsors
+Through the time I have deticated to execute the app project. I fonud myself enjoying the work and I was happy to meet new challenges and to strive through them. 
+Let me breakdown my process:
+1. I attempted to set a new structure and initiate all the libraries (and every tool I was going to use through the project.)
+2. I initiated a git structure to make the project commits/push at the Git repository platform.
+3. I initiated Tailwind CSS in order to use classes for style the application.
+4. I initiated Laravel Breeze in order to set an authentication structure for the user.
+5. I used an MVC architecture, so I tried to use every productive aspect of Laravel Framework. At this point I set the  Controller, the Model Structure.
+I have implemented the migrations at the Database, and set the database columns. Also I've created Factories for the Models in order to feed the database with dummy data, as i was performing Unit Tests for the app.
+6. I have chosen to work for inner to outer. So I began to write basic Php Unit tests and  implement the according functionality I was tested..Through this phase my main interest was about, the proper functionality of CRUD operrations.
+7. I have started to set the views, not caring so much about the styling at this point, but I wanted to set the routes properly, and create the app architecture.
+8. At this point and after I had a basic functional structure, I have started to care more about the styling.
+9. I made a decision transition moving my main dashboard from a third view file, at the Laravel Breeze Dashboard file. So this kept me a little behind the process. 
+9. As I was keeping to work at the project, I was interested establishing  relationships between the User and Company models, in order to create the functionality for private dashboard.
+10. I tried the challenge for soft deletes, as it was a concept, I didn't reach out ever before. It was too interesting and let me equip with another technique,
+that it might be usefull at the future.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Finally I let myself free to user pen and paper for figuring out the next steps, and I was trying to search for information in every way, in order to execute the project.
+I dedicated 48 hours almost, but unfortunately I didn't go for the (optional) filter challenge, cause I my time was ended, and i prefered to be consistent at the deadline.
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## In order to run the project
 
-## Contributing
+1. clone the project from the github repository
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+run a git bash terminal
 
-## Code of Conduct
+execute 
+git clone https://github.com/parischaralampidis3/test-app.git
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+This will clone the project at your local computer.
 
-## Security Vulnerabilities
+Then run 
+cd junior laravel project/test-app
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+install composer
 
-## License
+At the root of the project 
+run to fire the php server
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+php artisan run serve
+
+Also for building the tailwind css
+npm run dev 
+
+
+
