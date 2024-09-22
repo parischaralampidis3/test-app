@@ -41,22 +41,26 @@ I dedicated 48 hours almost, but unfortunately I didn't go for the (optional) fi
 
 ## In order to run the project
 
-1. clone the project from the github repository
+1. clone the project from the github repository.
 
-run a git bash terminal
+2. run a git bash terminal.
 
-execute 
+3. execute at your preferred pc location:
+
 git clone https://github.com/parischaralampidis3/test-app.git
 
 This will clone the project at your local computer.
 
-Then run 
-test-app
 
-install composer dependencies
-run composer install
+4. install composer dependencies:
 
-Copy the .env.example file and set the database setting name
+run: composer install
+
+5. Copy the .env.example.example file.
+
+6. Paste the file at the root and rename at .env.
+
+7. Access .env file and set the database settings, similar to the following:
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -65,21 +69,29 @@ DB_DATABASE=user_company
 DB_USERNAME=root
 DB_PASSWORD=
 
-Connet the project through a DB client.
+8. Connet the project through a DB client:
 
--Run the migrations, in order to initialize the default database tables
+9. To set npm dependencies:
+
+run npm install
+
+10. Run to generate a key for .env:
+
+php artisan generate:key
+
+11. Run:
+
+npm run dev
+
+12. Run the migrations, in order to initialize the default database tables:
 
 php artisan migrate
 
 
-At the root of the project 
-run to fire the php server
+13. At the root of the project run to fire the php server:
 
 php artisan run serve
-
-
-Also for building the tailwind css
-npm run dev 
+ 
 
 
 
