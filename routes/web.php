@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('company/{company:id}', [CompanyController::class, 'show'])->name('company.show');
 
-Route::get('create', [CompanyController::class, 'create'])->name('company.create');
+Route::get('/create', [CompanyController::class, 'create'])->middleware('auth')->name('company.create');  // Fixed
 Route::post('create', [CompanyController::class, 'store']);
 
 Route::get('edit/{company:id}', [CompanyController::class, 'edit'])->name('company.edit');
