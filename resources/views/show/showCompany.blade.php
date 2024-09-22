@@ -1,5 +1,4 @@
-@extends('layout') 
-@section('content')
+<x-app-layout>
 <div class="container mx-auto">
     <div class="flex justify-between items-center">
     <h1 class="font-bold mt-10 mx-6 text-2xl mx-auto">Company Record - Details</h1>
@@ -35,4 +34,4 @@
     </div>
 </div>
 </div>
-@endsection
+</x-app-layout>
