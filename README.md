@@ -51,14 +51,32 @@ git clone https://github.com/parischaralampidis3/test-app.git
 This will clone the project at your local computer.
 
 Then run 
-cd junior laravel project/test-app
+test-app
 
-install composer
+install composer dependencies
+run composer install
+
+Copy the .env.example file and set the database setting name
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=user_company
+DB_USERNAME=root
+DB_PASSWORD=
+
+Connet the project through a DB client.
+
+-Run the migrations, in order to initialize the default database tables
+
+php artisan migrate
+
 
 At the root of the project 
 run to fire the php server
 
 php artisan run serve
+
 
 Also for building the tailwind css
 npm run dev 
