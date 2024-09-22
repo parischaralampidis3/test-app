@@ -2,7 +2,7 @@
 <section class="container mx-auto">
     <div class="flex justify-around items-center p-10">
         <h1 class="font-bold text-center mt-10 text-2xl ml-0">Update a Company record</h1>
-        <a class="mt-10 ml-10 bg-green-600 text-white font-bold py-2 px-2 hover:underline" href="/">Go at the main
+        <a class="mt-10 ml-10 bg-green-600 text-white font-bold py-2 px-2 hover:underline" href="dashboard">Go at the main
             page</a>
     </div>
 

@@ -4,7 +4,7 @@
     <section class="container mx-auto">             
         <div class="flex justify-around items-center">
             <h1 class="font-bold text-center mt-10 text-2xl ml-0">Create a Company record</h1>
-            <a class="mt-10 ml-4 bg-green-600 text-white font-bold py-2 px-2 hover:underline" href="/">Go at the main page</a>
+            <a class="mt-10 ml-4 bg-green-600 text-white font-bold py-2 px-2 hover:underline" href="dashboard">Go at the main page</a>
         </div>
            <div class="flex flex-column justify-center items-center mt-10">
 

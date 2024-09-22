@@ -86,19 +86,41 @@ class CompanyController extends Controller
         session()->flash('success', 'Company updated successfully!');
         return redirect()->back();
     }
+    
+    public function archive(){
+          $company = Company::onlyTrashed()
+        ->where('user_id', auth()->id())
+        ->latest()
+        ->get();
+
+    // Return the 'archive' view with the 'companies' variable
+        return view('archive.archive' , compact('company'));
+    }
 
     public function destroy($id)
     {
-        $company = Company::find($id);
+        $company = Company::withTrashed()->find($id);
 
         // Check if the company exists and the user owns it
         if (!$company || $company->user_id !== auth()->id()) {
             session()->flash('fail', "Company can't be deleted or you don't have permission.");
             return redirect('dashboard');
         }
+        
+         if ($company->trashed()) {
+        $company->forceDelete();  // Permanently delete the company
+        session()->flash('success', 'Company permanently deleted.');
+        return redirect('dashboard');
+    }
 
         $company->delete();
         session()->flash('success', 'Company deleted successfully.');
         return redirect('dashboard');
+    }
+
+    public function restore($id){
+        $company = Company::withTrashed()->find($id);
+        $company->restore();
+        return(redirect('dashboard'));
     }
 }

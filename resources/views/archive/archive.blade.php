@@ -8,20 +8,20 @@
               
                 </div>
     </x-slot>
-
-    <div class="py-12">
+ <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
               
     <section class="flex justify-around mx-5 px-0 py-6"> <!-- Added margin-x and padding-x -->
     <div class="mt-12 mx-auto overflow-x-auto">
-        
+  
       <div class="flex flex-row justify-between">
-        <h1 class="text-xl font-bold">Company List</h1>
-        <div class="flex flex-col">
-        <a class="update bg-blue-500 text-white font-bold py-2 px-2 rounded" href="{{route('company.create')}}">Create Company</a>
-        <a  class="bg-red-500 text-white font-bold py-2 px-2 mt-5 rounded" href="{{route('company.archive')}}">Archived Company Results</a>
+     
+      
         </div>
+              <div class="flex justify-around items-center">
+            <h1 class="font-bold text-center mt-10 text-2xl ml-0">Archived Company List</h1>
+            <a class="mt-10 ml-4 bg-green-600 text-white font-bold py-2 px-2 hover:underline" href="dashboard">Go at the main page</a>
         </div>
         <br /><br />
         <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
@@ -36,20 +36,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($companies as $company)
+                    @foreach ($company as $company)
                     <tr class="hover:bg-slate-50 border-b border-slate-200">
                         <td class="p-4 py-5">{!! $company->name !!}</td>
                         <td class="p-4 py-5">{!! $company->address !!}</td>
                         <td class="p-4 py-5">{!! $company->email !!}</td>
                         <td class="p-4 py-5">{!! $company->website !!}</td>
                         <td class="p-4 py-5 flex">
-                            <a class="update bg-blue-500 text-white font-bold py-2 px-2 rounded" href="{{route('company.update', $company->id)}}">Update</a>
-                            <a class='ml-4 bg-blue-500 text-white font-bold py-2 px-2 hover:underline' href="{{route('company.show', $company->id)}}">Show</a>
+                           
+                          <form action = "{{route('company.restore', $company->id)}}" method="POST">
+                                @csrf
+                                <button class="ml-4 bg-blue-500 text-white font-bold py-2 px-2 hover:underline" >Restore</button>
+                            </form>
                             <form action = "{{route('company.destroy', $company->id)}}" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <button class="ml-4 bg-red-500 text-white font-bold py-2 px-2 hover:underline" >Delete</button>
                             </form>
+                            
                         </td>
                     </tr>
                     @endforeach
@@ -62,4 +66,7 @@
             </div>
         </div>
     </div>
+
+
+  
 </x-app-layout>

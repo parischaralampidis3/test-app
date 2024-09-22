@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('email')->unique();
             $table->string('website');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -31,6 +32,14 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('company');
+        Schema::dropIfExists('company');        
+        Schema::table('companies', function (Blueprint $table) {
+        $table->dropSoftDeletes(); // Removes the deleted_at column
+    });
     }
+    
+
+
+
+
 };
